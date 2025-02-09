@@ -1,0 +1,24 @@
+/* bugSolution.css */
+/* Correctly handles calculations with different units and properties */
+.container {
+  width: 50%; /* Correct base width */
+  /* Ensure this calculation is processed AFTER the width is set to 50% */
+  margin-left: calc((100vw - 50%) / 2); 
+}
+
+/* Avoid nested calculations for clarity and potential issues */
+.element {
+  width: calc(200px + 20%); /* Correct: Clear separation of units */
+}
+/* Add a comment indicating what the calculation should achieve */
+.element2 {
+  width: calc(50% - 20px); /* Subtract 20px from 50% of the container width */
+}
+/* Avoid overly complex expressions */
+.element3 {
+  padding: 10px;
+  margin: 10px;
+  /* Separate calculations */
+  width: calc(100px + 20px);
+  height: calc(200px - 10px);
+}
